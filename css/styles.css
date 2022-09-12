@@ -1,0 +1,154 @@
+:root{
+    --text-color: #828282;
+    --border-color:#e0e0e0;
+    --primary-color: #2F80ED;
+}
+*, *:after, *:before{
+    box-sizing: inherit;
+    font:inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;       /* 1rem = 10px */
+}
+body{
+    font: 1.6rem 'Lato', sans-serif;
+    color:#222;
+    height: 100vh;
+    background-size: cover;
+}
+p{
+    max-width: 60rem;
+}
+a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.background-overlay{
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.container{
+    width: 100%;
+    max-width: 120rem;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.4rem;
+    align-items: center;
+}
+.container__logo-container{
+    grid-column: 1 / span 4;
+    justify-self: center;
+}
+.container__panel-container{
+    grid-column: 6 / span 6;
+}
+.panel{
+    background-color: #fff;
+    border-radius: 0.8rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    padding: 2.4rem;
+}
+.panel__heading{
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+.panel__subheading{
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2.4rem;
+}
+.input{
+    margin-bottom : 2rem;
+    position: relative;
+}
+.input label{
+    font-size: 1.2rem;
+    color: var(--text-color);
+    display: block;
+}
+input{
+    border: none;
+    border-bottom: 0.1rem solid var(--border-color);
+    width: 100%;
+    outline: none;
+}
+.input__indicator{
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 0.2rem;
+    transition: all 0.3s ease-in-out;
+    
+}
+.input input:focus ~ .input__indicator{
+    width: 100%;
+    right:0;
+    background: var(--primary-color);
+}
+.name{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+}
+.date-of-birth__heading{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+}
+.month-dropdown label{
+    font-size: 1.2rem;
+    color: var(--text-color);
+    display: block;
+}
+.month-dropdown select{
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-bottom: 0.1rem solid var(--border-color);
+    outline: none;
+}
+.date-of-birth__inputs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+.consents{
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 4rem;
+}
+button{
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    border: none;
+    border-radius: 0.9rem;
+    background: var(--primary-color);
+    padding: 1rem 2.4rem;
+}
+@media only screen and (max-width: 660px) {
+    .container__logo-container{
+        display: none;
+    }
+    .container__panel-container{
+        grid-column: 1 / span 12;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .container{
+        padding: 0;
+    }
+    .panel{
+        height: 100vh;
+        border: none;
+    }
+}

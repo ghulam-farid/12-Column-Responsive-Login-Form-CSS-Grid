@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- tab icon -->
+    <link rel="icon" href="./images/behold-logo-small.png" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-overlay">
+      <div class="container">
+        <div class="container__logo-container">
+          <img src="./images/behold-logo.png" alt="behold logo" />
+        </div>
+        <div class="container__panel-container">
+          <div class="panel">
+            <h1 class="panel__heading">Create an account</h1>
+            <p class="panel__subheading">
+              Already have an account? <a href="#">Sign in</a>
+            </p>
+            <form action="">
+              <div class="input">
+                <label for="email">Email address</label
+                ><input type="email" name="email" id="email" required />
+                <div class="input__indicator"></div>
+              </div>
+              <div class="name">
+                <div class="input">
+                  <label for="first-name">First Name</label
+                  ><input
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    required
+                  />
+                  <div class="input__indicator"></div>
+                </div>
+                <div class="input">
+                  <label for="last-name">Last Name</label
+                  ><input
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    required
+                  />
+                  <div class="input__indicator"></div>
+                </div>
+              </div>
+              <div class="input">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required />
+                <div class="input__indicator"></div>
+              </div>
+              <div class="date-of-birth">
+                <h6 class="date-of-birth__heading">Date of birth</h6>
+                <div class="date-of-birth__inputs">
+                  <div class="month-dropdown">
+                    <label for="month">Month</label>
+                    <select name="month" id="month">
+                      <option value="January">January</option>
+                      <option value="Feburary">Feburary</option>
+                      <option value="March">March</option>
+                      <option value="April">April</option>
+                      <option value="May">May</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
+                    </select>
+                  </div>
+                  <div class="input">
+                    <label for="day">Day</label
+                    ><input
+                      type="number"
+                      name="day"
+                      id="day"
+                      min="1"
+                      max="31"
+                    />
+                    <div class="input__indicator"></div>
+                  </div>
+                  <div class="input">
+                    <label for="year">Year</label
+                    ><input type="number" name="year" id="year" min="1999" />
+                    <div class="input__indicator"></div>
+                  </div>
+                </div>
+                <p class="consents">
+                  By clicking Create account, I agree that I have read and
+                  accepted the<a href="#">Terms of Use</a>and<a href="#"
+                    >Privacy Policy</a
+                  >
+                </p>
+                <button type="submit">Create Account</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let images = ['fall.jpeg','flowerPlant.jpeg','leaf.jpeg'];
+    const changeBackgroundImage = () =>{
+        let randomImage = images[Math.floor(Math.random() * images.length)];
+        document.body.style.backgroundImage = `url('./images/${randomImage}')`;
+    }
+    window.onload = changeBackgroundImage;
+  </script>
+</html>
